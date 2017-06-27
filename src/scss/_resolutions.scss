@@ -1,0 +1,12 @@
+$grid: (container: 960px, columns: 12, width: 60px, margin: 20px);
+@function calc-container($grid: $grid) {
+    @return (map-get($grid, width) + map-get($grid, margin)) * map-get($grid, columns);
+}
+
+@function calc-col($columns, $grid: $grid) {
+    @return (map-get($grid, width) * $columns) + (map-get($grid, margin) * $columns) - map-get($grid, margin);
+}
+
+@function calc-margin($margin) {
+    @return $margin/2;
+}

@@ -1,0 +1,70 @@
+@import 'colors';
+@import 'fonts';
+@import 'resolutions';
+body {
+    font-family: $fonts;
+    width: calc-container();
+    margin: 0 auto;
+    padding: 0;
+    &:after {
+        clear: both;
+        content: '';
+        display: block;
+    }
+}
+
+.header,
+.footer {
+    color: $text-color;
+    float: left;
+    width: calc-col(12);
+    padding: 0.5em 1em;
+}
+
+.header,
+.section>div:nth-child(1)>ul>li:last-child {
+    background-color: $primary-color;
+    color: $text-color;
+}
+
+.section>div:nth-child(1)>ul {
+    margin: 0 calc-margin(map-get($grid, margin));
+    padding: 0;
+}
+
+.section>div:nth-child(1) {
+    float: left;
+    margin: 0;
+    width: calc-col(3);
+}
+
+.section>div:nth-child(2) {
+    float: right;
+    width: calc-col(9);
+}
+
+.section>div:nth-child(3)>.aside {
+    text-align: center;
+    margin-bottom: 15px;
+    background: $secondary-color;
+    color: $text-color;
+}
+
+.section>div:nth-child(1)>ul>li {
+    background: $secondary-color;
+    color: $text-color;
+    margin: calc-margin(map-get($grid, margin));
+    padding: 0.5em 1em;
+}
+
+.footer {
+    background: $secondary-color;
+    text-align: center;
+}
+
+div:nth-child(3) .aside,
+div:nth-child(4) {
+    float: left;
+    margin: 0 calc-margin(map-get($grid, margin));
+    width: calc-col(12);
+}
